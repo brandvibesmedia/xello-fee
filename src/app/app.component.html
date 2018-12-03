@@ -1,0 +1,18 @@
+<header id="header">
+	<h1>{{ title }}</h1>
+	<img width="300" alt="Angular Logo" src="https://xello.world/images/xello-logo.svg">
+</header>
+
+<main>
+	<div class="container text-center">
+		<h2>Swap tooltips</h2>
+		<p>Here are 2 components below. Please mouse over one component to show tooltip on another and vice versa.</p>
+		<div class="tool-buttons">
+			<tool-button *ngFor="let button of toolbuttons; index as i" [num]="i" [tooltip]="button.tooltip"
+			             [placement]="tPlacement" [akey]="button.akey" (bclick)="showTooltip($event)">
+			</tool-button>
+		</div>
+	</div>
+</main>
+
+<router-outlet></router-outlet>
